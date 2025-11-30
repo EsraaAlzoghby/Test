@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+    :root {
+    --radius: 0.75rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee__inner {
+  display: inline-flex;
+  gap: 2rem; /* نفس ال-gap في التصميم */
+  white-space: nowrap;
+  /* تأكدي من وجود هذا ال animation name في نفس الملف */
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+
+/* المجموعة المكررة لتكرار المحتوى */
+.marquee__group {
+  display: inline-flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* keyframes - تحرك من 0% ل -50% لكي تختفي النصف الأول وتظهر الثانية */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    --primary: 0 94% 40%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-dark: 0 94% 35%;
+    --primary-light: 0 94% 50%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 94% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 94% 40%;
+
+    --radius: 0.75rem;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(0 94% 40%), hsl(0 94% 30%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 94% 40% / 0.95), hsl(0 94% 25% / 0.95));
+    
+    --shadow-elegant: 0 10px 30px -10px hsl(0 94% 40% / 0.2);
+    --shadow-glow: 0 0 40px hsl(0 94% 50% / 0.15);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 94% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-dark: 0 94% 40%;
+    --primary-light: 0 94% 60%;
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 94% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 94% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+}
+
