@@ -26,21 +26,18 @@
 
 .marquee__inner {
   display: inline-flex;
-  gap: 2rem; /* نفس ال-gap في التصميم */
+  gap: 2rem; 
   white-space: nowrap;
-  /* تأكدي من وجود هذا ال animation name في نفس الملف */
   animation: marquee 20s linear infinite;
   will-change: transform;
 }
 
-/* المجموعة المكررة لتكرار المحتوى */
 .marquee__group {
   display: inline-flex;
   gap: 2rem;
   align-items: center;
 }
 
-/* keyframes - تحرك من 0% ل -50% لكي تختفي النصف الأول وتظهر الثانية */
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -50,9 +47,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
 
 @layer base {
   :root {

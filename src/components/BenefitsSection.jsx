@@ -68,10 +68,9 @@ function BenefitsSection() {
 
         <div className="bg-gradient-to-br mt-10 max-w-[95%] sm:max-w-7xl mx-auto from-red-500 to-red-600 rounded-2xl shadow-2xl overflow-hidden">
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Left - Content */}
             <div className="p-8 lg:p-12 text-white">
               <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm mb-4">
-                🎁 Special Reward
+                Special Reward
               </div>
               <h3 className="text-3xl mb-4">Get Paid for Your Success</h3>
               <div className="space-y-4 mb-6">
@@ -93,7 +92,7 @@ function BenefitsSection() {
               </div>
             </div>
 
-           
+
             <div className="relative p-8 lg:p-12">
               <div className="bg-white rounded-2xl p-8 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform">
                 <div className="text-center">

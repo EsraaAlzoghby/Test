@@ -1,6 +1,5 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { ArrowLeft, Monitor, Users, Target, DollarSign, Clock, Award, CheckCircle, Video, BookOpen, Zap, TrendingUp, MessageSquare, Trophy, Star } from "lucide-react";
-
 import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion";
@@ -8,7 +7,6 @@ import { Badge } from "../components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { useState, useEffect } from "react"
 
-// Program Details Page - Shows full information about a specific track
 function ProgramDetailsPage() {
   const { trackId } = useParams();
   const navigate = useNavigate();
@@ -20,107 +18,95 @@ function ProgramDetailsPage() {
   }, [])
 
   useEffect(() => {
-  setMounted(true);
-  window.scrollTo(0, 0);
-}, []);
+    setMounted(true);
+    window.scrollTo(0, 0);
+  }, []);
 
   const benefits = ["100% Online", "Live Support", "25% Cashback"]
 
-  // Function to navigate to create profile page with track pre-selected
   const handleTakeExam = () => {
     navigate(`/create-profile?track=${trackId}`);
   };
 
-  // Sticky CTA component that appears at bottom while scrolling
 
 
   return (
     <div className="min-h-screen bg-background">
- {/* HERO SECTION WITH IMAGE */}
-<section className="relative bg-gradient-to-b from-primary/40 via-background to-background py-24 overflow-hidden">
-      {/* Header */}
+      <section className="relative bg-gradient-to-b from-primary/40 via-background to-background py-24 overflow-hidden">
 
 
-      {/* Main Content */}
-      <main className="">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[600px]">
-            {/* Left Section - Content */}
-            <div className="flex flex-col gap-8 z-10">
-              {/* Headline with underline */}
-              <div className="space-y-4">
-                <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-                  Get Certified in
-                  <br />
-                  Data Analytics
-                </h1>
-                <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-500" />
-              </div>
-
-              {/* Main Badge */}
-              <div className="space-y-2">
-                <h2 className="text-5xl sm:text-6xl font-bold">
-                  <span className="text-gray-900">Diploma in</span>
-                  <br />
-                  <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+        {/* Main Content */}
+        <main className="">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[600px]">
+              <div className="flex flex-col gap-8 z-10">
+                <div className="space-y-4">
+                  <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+                    Get Certified in
+                    <br />
                     Data Analytics
-                  </span>
-                </h2>
-              </div>
-
-              {/* Decorative dots grid */}
-           
-              {/* Benefits List */}
-              <div className="space-y-3">
-                {benefits.map((benefit) => (
-                  <div key={benefit} className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-red-600 rounded-full flex-shrink-0" />
-                    <span className="text-lg text-gray-900 font-medium">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTA Button */}
-              <button className="w-fit px-8 py-4 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg hover:shadow-xl hover:shadow-red-200 transition-all duration-300 transform hover:scale-105">
-                Enroll Now
-              </button>
-            </div>
-
-            {/* Right Section - Image and Background */}
-            <div className="relative h-full min-h-96 lg:min-h-full">
-              {/* Magenta diagonal background section */}
-              <div className="absolute -right-20 -top-20 w-96 h-96 bg-gradient-to-br from-red-600 to-red-500 rounded-full opacity-80" />
-
-
-              {/* Hero Image */}
-              {mounted && (
-                <div className="relative z-10 flex justify-center items-center h-full">
-                  <div className="relative w-full max-w-md">
-                    {/* Laptop/Device mockup */}
-                    <div className="bg-black rounded-2xl shadow-2xl overflow-hidden border-8 border-black transform -rotate-6">
-                      <img
-                        src="/src/assets/data-analytics-dashboard-charts-graphs.jpg"
-                        alt="Data Analytics Dashboard"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
-                    {/* Hand pointing gesture - using placeholder */}
-                    <div className="absolute bottom-8 right-0 w-24 h-24">
-                      <img
-                        src="/src/assets/hand-pointing-at-laptop-screen.jpg"
-                        alt="Hand interacting"
-                        className="w-full h-full object-contain opacity-90"
-                      />
-                    </div>
-                  </div>
+                  </h1>
+                  <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-500" />
                 </div>
-              )}
+
+                {/* Main Badge */}
+                <div className="space-y-2">
+                  <h2 className="text-5xl sm:text-6xl font-bold">
+                    <span className="text-gray-900">Diploma in</span>
+                    <br />
+                    <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+                      Data Analytics
+                    </span>
+                  </h2>
+                </div>
+
+                {/* Benefits List */}
+                <div className="space-y-3">
+                  {benefits.map((benefit) => (
+                    <div key={benefit} className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-red-600 rounded-full flex-shrink-0" />
+                      <span className="text-lg text-gray-900 font-medium">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA Button */}
+                <button className="w-fit px-8 py-4 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg hover:shadow-xl hover:shadow-red-200 transition-all duration-300 transform hover:scale-105">
+                  Enroll Now
+                </button>
+              </div>
+
+              <div className="relative h-full min-h-96 lg:min-h-full">
+                <div className="absolute -right-20 -top-20 w-96 h-96 bg-gradient-to-br from-red-600 to-red-500 rounded-full opacity-80" />
+
+
+                {/* Hero Image */}
+                {mounted && (
+                  <div className="relative z-10 flex justify-center items-center h-full">
+                    <div className="relative w-full max-w-md">
+                      <div className="bg-black rounded-2xl shadow-2xl overflow-hidden border-8 border-black transform -rotate-6">
+                        <img
+                          src="/src/assets/data-analytics-dashboard-charts-graphs.jpg"
+                          alt="Data Analytics Dashboard"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+                      <div className="absolute bottom-8 right-0 w-24 h-24">
+                        <img
+                          src="/src/assets/hand-pointing-at-laptop-screen.jpg"
+                          alt="Hand interacting"
+                          className="w-full h-full object-contain opacity-90"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </main>
-</section>
+        </main>
+      </section>
 
       {/* PROGRAM OVERVIEW - 3 PHASES */}
       <section className="py-10 bg-secondary/20">
@@ -390,7 +376,7 @@ function ProgramDetailsPage() {
                 <TabsTrigger value="curriculum">Curriculum</TabsTrigger>
                 <TabsTrigger value="projects">Projects & Assessments</TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="curriculum" className="mt-6">
                 <div className="overflow-x-auto">
                   <table className="w-full">
@@ -431,7 +417,7 @@ function ProgramDetailsPage() {
                   </table>
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="projects" className="mt-6">
                 <div className="space-y-4">
                   <Card className="p-4 bg-secondary/50">
@@ -503,7 +489,7 @@ function ProgramDetailsPage() {
                     <span className="text-sm text-primary font-bold">12</span>
                   </div>
                   <div className="w-full bg-border rounded-full h-2">
-                    <div className="bg-primary h-2 rounded-full" style={{width: '60%'}}></div>
+                    <div className="bg-primary h-2 rounded-full" style={{ width: '60%' }}></div>
                   </div>
                 </div>
                 <div className="bg-secondary/50 p-3 rounded-lg">
@@ -512,7 +498,7 @@ function ProgramDetailsPage() {
                     <span className="text-sm text-primary font-bold">25%</span>
                   </div>
                   <div className="w-full bg-border rounded-full h-2">
-                    <div className="bg-primary h-2 rounded-full" style={{width: '25%'}}></div>
+                    <div className="bg-primary h-2 rounded-full" style={{ width: '25%' }}></div>
                   </div>
                 </div>
                 <div className="bg-secondary/50 p-3 rounded-lg">
@@ -521,7 +507,7 @@ function ProgramDetailsPage() {
                     <span className="text-sm text-primary font-bold">$85</span>
                   </div>
                   <div className="w-full bg-border rounded-full h-2">
-                    <div className="bg-primary h-2 rounded-full" style={{width: '42.5%'}}></div>
+                    <div className="bg-primary h-2 rounded-full" style={{ width: '42.5%' }}></div>
                   </div>
                 </div>
               </div>
@@ -546,7 +532,7 @@ function ProgramDetailsPage() {
             <p className="text-lg text-muted-foreground mb-6">
               Once you submit proof of earning your first $200, we'll reward you with 25% cashback within 30 days.
             </p>
-            
+
             <div className="bg-secondary/50 p-6 rounded-xl mb-6">
               <h4 className="font-bold mb-4 text-xl">Your Success Journey:</h4>
               <div className="space-y-4">

@@ -104,9 +104,8 @@ const FAQSection = forwardRef((props, ref) => {
                 return (
                   <div
                     key={qIdx}
-                    className={`border rounded-lg mb-3 transition-all duration-300 ${
-                      isOpen ? "border-red-600" : "border-gray-300"
-                    }`}
+                    className={`border rounded-lg mb-3 transition-all duration-300 ${isOpen ? "border-red-600" : "border-gray-300"
+                      }`}
                   >
                     <button
                       onClick={() =>
@@ -118,9 +117,8 @@ const FAQSection = forwardRef((props, ref) => {
                     >
                       <span>{item.q}</span>
                       <i
-                        className={`fa-solid ${
-                          isOpen ? "fa-chevron-up" : "fa-chevron-down"
-                        } text-red-600`}
+                        className={`fa-solid ${isOpen ? "fa-chevron-up" : "fa-chevron-down"
+                          } text-red-600`}
                       ></i>
                     </button>
 

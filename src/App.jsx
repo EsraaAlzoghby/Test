@@ -21,10 +21,10 @@ function App() {
           <Route path="/questions" element={<QuestionsPage />} />
           <Route path="/program-details/:id" element={<ProgramDetailsPage />} />
 
-         <Route path="/create-profile" element={<CreateProfilePage />} />
+          <Route path="/create-profile" element={<CreateProfilePage />} />
 
-           {/* Auth page - login and sign up */}
-            <Route path="/auth" element={<AuthPage />} />
+          {/* Auth page - login and sign up */}
+          <Route path="/auth" element={<AuthPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

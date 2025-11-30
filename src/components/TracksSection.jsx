@@ -6,7 +6,6 @@ import TrackCard from "./TrackCard";
 function TracksSection() {
   const navigate = useNavigate();
 
-  // تعريف التراكات
   const tracks = [
     {
       title: "Frontend Development",
@@ -119,7 +118,6 @@ function TracksSection() {
   return (
     <section id="tracks" className="py-20 bg-gray-100">
       <div className="container mx-auto px-4">
-        {/* العنوان والوصف */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">
             Choose Your Freelancing Track
@@ -129,7 +127,6 @@ function TracksSection() {
             designed to help you learn, build projects, and start earning your first $200 online.
           </p>
 
-          {/* الملاحظة الخاصة بالامتحان */}
           <div className="bg-red-50 border-l-4 border-red-600 p-6 rounded-lg max-w-3xl mx-auto">
             <p className="font-semibold mb-2">
               <i className="fas fa-book-open text-red-600 text-lg pe-6"></i>
@@ -141,7 +138,6 @@ function TracksSection() {
           </div>
         </div>
 
-        {/* عرض التراكات */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {tracks.map((item, i) => (
             <TrackCard
@@ -156,20 +152,18 @@ function TracksSection() {
           ))}
         </div>
 
-        {/* زرار عرض الكورسات */}
         <div className="mt-12 text-center">
-<button
-  onClick={() => {
-    navigate("/courses");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }}
-  className="bg-red-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition duration-300"
->
-  Show More Courses
-</button>
+          <button
+            onClick={() => {
+              navigate("/courses");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="bg-red-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition duration-300"
+          >
+            Show More Courses
+          </button>
         </div>
 
-        {/* جزء التوضيح */}
         <div className="mt-12 text-center">
           <div className="bg-white border-2 border-red-600 rounded-2xl p-8 max-w-4xl mx-auto shadow-lg">
             <h3 className="text-2xl font-bold mb-4">

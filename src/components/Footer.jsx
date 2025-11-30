@@ -6,7 +6,7 @@ import {
   Instagram,
   Linkedin,
   Youtube,
-} from "lucide-react";import amitLogo from "../assets/amit logo (white).png";
+} from "lucide-react"; import amitLogo from "../assets/amit logo (white).png";
 
 function Footer() {
   const scrollToSection = (id) => {
@@ -20,7 +20,7 @@ function Footer() {
     <footer className="bg-gray-900 text-white py-10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-          
+
           <div className="md:pr-6">
             <img
               src={amitLogo}
@@ -33,7 +33,6 @@ function Footer() {
               specialized in embedded systems, software computer science and IT.
             </p>
 
-            {/* SOCIAL ICONS */}
             <div className="flex gap-4 mt-6">
               <a
                 href="#"
@@ -112,50 +111,47 @@ function Footer() {
             </ul>
           </div>
 
-       <div>
-  <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
-  <ul className="space-y-4 text-sm text-gray-300">
-    <li className="flex items-start gap-3">
-      <Mail className="w-5 h-5 text-red-500 mt-1" />
-      <a href="mailto:support@amitpro.com" className="hover:text-red-500">
-        support@amit.com
-      </a>
-    </li>
-    <li className="flex items-start gap-3">
-      <Phone className="w-5 h-5 text-red-500 mt-1" />
-      <span className="hover:text-red-500">+20 123 456 7890</span>
-    </li>
-    <li className="flex items-start gap-3">
-      <MapPin className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />
-      <span className="hover:text-red-500">
-        El Salam Tower, Next to As Salam International Hospital, Second Floor Above Alfa Laboratory, Cornish El Maadi, Cairo, Egypt.
-      </span>
-    </li>
-    <li className="flex items-start gap-3">
-      <MapPin className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />
-      <span className="hover:text-red-500">
-Al Serag Mall, Entrance 4, Next to Tec Hub Store, Left corridor, Fifth Floor, Nasr City, Cairo, Egypt.      </span>
-    </li>
-    <li className="flex items-start gap-3">
-      <MapPin className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />
-      <span className="hover:text-red-500">
-234 Shaarawy St., Ghaly Building, Next to Hoda Shaarawy School, First Floor Above Masjid Al Farouk, Louran, Alexandria, Egypt.      </span>
-    </li>
-  </ul>
-</div>
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+            <ul className="space-y-4 text-sm text-gray-300">
+              <li className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-red-500 mt-1" />
+                <a href="mailto:support@amitpro.com" className="hover:text-red-500">
+                  support@amit.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-red-500 mt-1" />
+                <span className="hover:text-red-500">+20 123 456 7890</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />
+                <span className="hover:text-red-500">
+                  El Salam Tower, Next to As Salam International Hospital, Second Floor Above Alfa Laboratory, Cornish El Maadi, Cairo, Egypt.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />
+                <span className="hover:text-red-500">
+                  Al Serag Mall, Entrance 4, Next to Tec Hub Store, Left corridor, Fifth Floor, Nasr City, Cairo, Egypt.      </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />
+                <span className="hover:text-red-500">
+                  234 Shaarawy St., Ghaly Building, Next to Hoda Shaarawy School, First Floor Above Masjid Al Farouk, Louran, Alexandria, Egypt.      </span>
+              </li>
+            </ul>
+          </div>
 
         </div>
 
         <div className="border-t border-gray-800 mb-8"></div>
 
-        {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          {/* Copyright */}
           <div className="text-gray-400">
             © 2025 AMIT Pro. All rights reserved.
           </div>
 
-          {/* Legal Links */}
           <div className="flex flex-wrap gap-6">
             <a href="#" className="hover:text-red-500 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-red-500  transition-colors">Terms of Service</a>

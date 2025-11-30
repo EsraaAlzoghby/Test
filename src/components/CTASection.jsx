@@ -52,7 +52,7 @@ function HeroSection() {
           </div>
         </div>
 
-        
+
         <div className="absolute bottom-0 left-0 w-full bg-red-600 text-white py-6 marquee overflow-hidden">
           <div className="marquee__inner flex">
             <div className="marquee__group flex items-center gap-6 text-xl font-bold whitespace-nowrap">

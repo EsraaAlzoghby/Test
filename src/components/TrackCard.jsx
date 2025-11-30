@@ -7,7 +7,6 @@ function TrackCard({ id, title, description, icon, programs, focusAreas, isPopul
   const [currency, setCurrency] = useState("egp");
   const navigate = useNavigate();
 
-  // ⇨ الانتقال إلى صفحة التفاصيل
   const handleProgramDetails = () => {
     navigate(`/program-details/${id}`);
     setShowModal(false);
@@ -16,9 +15,8 @@ function TrackCard({ id, title, description, icon, programs, focusAreas, isPopul
   return (
     <>
       <div
-        className={`relative bg-white rounded-2xl shadow-lg flex flex-col transition-all duration-300 hover:ring-2 hover:ring-red-600 ${
-          isPopular ? "ring-offset-4" : ""
-        }`}
+        className={`relative bg-white rounded-2xl shadow-lg flex flex-col transition-all duration-300 hover:ring-2 hover:ring-red-600 ${isPopular ? "ring-offset-4" : ""
+          }`}
       >
         {isPopular && (
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-white px-6 py-1 rounded-full text-sm font-bold shadow-lg">
@@ -53,7 +51,6 @@ function TrackCard({ id, title, description, icon, programs, focusAreas, isPopul
             className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl relative p-6 overflow-y-auto max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* زر الإغلاق */}
             <button
               onClick={() => setShowModal(false)}
               className="absolute top-2 right-3 text-gray-800 hover:text-red-600 text-xl"
@@ -63,24 +60,21 @@ function TrackCard({ id, title, description, icon, programs, focusAreas, isPopul
 
             <h2 className="text-2xl font-bold mb-4 text-center text-red-700">{title}</h2>
 
-            {/* أزرار العملة */}
             <div className="flex justify-center gap-2 mb-6">
               {["egp", "usd", "sar"].map((cur) => (
                 <button
                   key={cur}
                   onClick={() => setCurrency(cur)}
-                  className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                    currency === cur
+                  className={`px-4 py-2 rounded-lg font-semibold transition-all ${currency === cur
                       ? "bg-red-600 text-white"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  }`}
+                    }`}
                 >
                   {cur.toUpperCase()}
                 </button>
               ))}
             </div>
 
-            {/* البرامج */}
             {programs.map((program, i) => (
               <div
                 key={i}
@@ -104,7 +98,6 @@ function TrackCard({ id, title, description, icon, programs, focusAreas, isPopul
               </div>
             ))}
 
-            {/* النقاط الأساسية */}
             <div className="mt-6">
               <h4 className="font-bold mb-3 text-red-700">You'll Focus On:</h4>
               <ul className="space-y-2">
@@ -117,7 +110,6 @@ function TrackCard({ id, title, description, icon, programs, focusAreas, isPopul
               </ul>
             </div>
 
-            {/* الأزرار */}
             <div className="flex gap-3 pt-6">
               <button className="flex-1 bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition">
                 Take Free Exam

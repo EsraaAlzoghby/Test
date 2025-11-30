@@ -29,8 +29,6 @@ function Index() {
       {/* How it works section - step by step process */}
       <HowItWorksSection />
       
-  
-      
       {/* CTA section - final call to action */}
       <CTASection />
       

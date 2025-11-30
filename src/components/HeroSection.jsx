@@ -29,19 +29,18 @@ function HeroSection() {
 
   return (
     <>
-      {/* HERO SECTION WITH FULL-WIDTH BACKGROUND IMAGE */}
-      <section 
-        id="hero" 
+      <section
+        id="hero"
         className="relative min-h-screen flex items-center overflow-hidden"
       >
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
-          <img 
-            src={heroFreelancer} 
+          <img
+            src={heroFreelancer}
             alt="Freelancer working on laptop - tech skills learning"
             className="w-full h-full object-cover"
           />
-          
+
           {/* Gradient Overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-red-600/50" />
           <div className="absolute inset-0 " />
@@ -50,13 +49,13 @@ function HeroSection() {
         {/* Content on top of background */}
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-3xl">
-            <motion.div 
+            <motion.div
               className="flex flex-col justify-center space-y-6 lg:space-y-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <motion.h1 
+              <motion.h1
                 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -65,23 +64,13 @@ function HeroSection() {
                 Learn In-Demand Tech Skills.<br />
                 Become a <br /> Successful Freelancer.
               </motion.h1>
-              
-              {/* <motion.p 
-                className="text-lg sm:text-xl lg:text-2xl text-foreground/90 leading-relaxed max-w-2xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                Take your first exam to join our freelancing program and start your journey toward your first $200 in results.
-              </motion.p> */}
-              
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="text-base px-8 py-6 shadow-lg hover:shadow-xl transition-all group"
                   onClick={scrollToTracks}
                 >
@@ -95,54 +84,54 @@ function HeroSection() {
       </section>
 
       {/* BENEFITS SECTION */}
-   <section className=" bg-muted/30">
-  <div className="">
+      <section className=" bg-muted/30">
+        <div className="">
 
-    {/* Marquee before the 3 cards */}
-    <div className="mb-6 w-full bg-red-600 text-white py-6 marquee overflow-hidden">
-      <div className="marquee__inner flex">
-        <div className="marquee__group flex items-center gap-6 text-xl font-bold whitespace-nowrap">
-          <span className="text-2xl">✦</span> Frontend Development
-          <span className="text-2xl">✦</span> AI & Machine Learning
-          <span className="text-2xl">✦</span> No-Code Solutions
-          <span className="text-2xl">✦</span> Full Support
-          <span className="text-2xl">✦</span> Guaranteed Success
-        </div>
+          {/* Marquee before the 3 cards */}
+          <div className="mb-6 w-full bg-red-600 text-white py-6 marquee overflow-hidden">
+            <div className="marquee__inner flex">
+              <div className="marquee__group flex items-center gap-6 text-xl font-bold whitespace-nowrap">
+                <span className="text-2xl">✦</span> Frontend Development
+                <span className="text-2xl">✦</span> AI & Machine Learning
+                <span className="text-2xl">✦</span> No-Code Solutions
+                <span className="text-2xl">✦</span> Full Support
+                <span className="text-2xl">✦</span> Guaranteed Success
+              </div>
 
-        <div className="marquee__group flex items-center gap-6 text-xl font-bold whitespace-nowrap">
-          <span className="text-2xl">✦</span> Frontend Development
-          <span className="text-2xl">✦</span> AI & Machine Learning
-          <span className="text-2xl">✦</span> No-Code Solutions
-          <span className="text-2xl">✦</span> Full Support
-          <span className="text-2xl">✦</span> Guaranteed Success
-        </div>
-      </div>
-    </div>
-
-    {/* Benefits Cards */}
-    <div className="grid grid-cols-1 mb-12 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      {benefits.map((benefit, idx) => (
-        <motion.div 
-          key={idx}
-          className="bg-card rounded-2xl p-8 text-center hover:shadow-lg hover:shadow-red-600 transition-all duration-300"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: idx * 0.1 }}
-          whileHover={{ y: -5 }}
-        >
-          <div className="inline-flex items-center justify-center mb-6 text-primary">
-            {benefit.icon}
+              <div className="marquee__group flex items-center gap-6 text-xl font-bold whitespace-nowrap">
+                <span className="text-2xl">✦</span> Frontend Development
+                <span className="text-2xl">✦</span> AI & Machine Learning
+                <span className="text-2xl">✦</span> No-Code Solutions
+                <span className="text-2xl">✦</span> Full Support
+                <span className="text-2xl">✦</span> Guaranteed Success
+              </div>
+            </div>
           </div>
-          <h3 className="text-lg font-semibold text-foreground leading-snug">
-            {benefit.title}
-          </h3>
-        </motion.div>
-      ))}
-    </div>
 
-  </div>
-</section>
+          {/* Benefits Cards */}
+          <div className="grid grid-cols-1 mb-12 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {benefits.map((benefit, idx) => (
+              <motion.div
+                key={idx}
+                className="bg-card rounded-2xl p-8 text-center hover:shadow-lg hover:shadow-red-600 transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="inline-flex items-center justify-center mb-6 text-primary">
+                  {benefit.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-foreground leading-snug">
+                  {benefit.title}
+                </h3>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section>
 
     </>
   );
@@ -153,5 +142,4 @@ function HeroSection() {
 export default HeroSection;
 
 
-      
-    
+

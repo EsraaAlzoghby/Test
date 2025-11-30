@@ -1,5 +1,4 @@
 "use client"
-
 import { useNavigate } from "react-router-dom"
 import TrackCard from "../components/TrackCard.jsx"
 import { Code2, Bot, Boxes, CheckSquare, BarChart2, Layout, Server, Search, ChevronDown, X } from "lucide-react"
@@ -49,9 +48,9 @@ function CoursesPage() {
       focusAreas: ["Real web projects", "Freelancing gigs on Upwork", "Client-ready portfolio"],
     },
 
- 
 
-     {
+
+    {
       title: "Backend Development",
       description: "Learn Node.js, Express, and MongoDB to build full-stack applications.",
       icon: <Server className="w-8 h-8" />,
@@ -115,7 +114,7 @@ function CoursesPage() {
       focusAreas: ["Python automation", "AI tools", "Client automation"],
     },
 
-   {
+    {
       title: "Testing & QA",
       description: "Learn manual and automated testing for web and mobile apps.",
       icon: <CheckSquare className="w-8 h-8" />,
@@ -271,7 +270,6 @@ function CoursesPage() {
     <div className="min-h-screen">
       <section className="py-20 bg-secondary/30 min-h-screen">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Search Bar - Keep at top */}
           <div className="flex justify-center mb-10">
             <div className="relative w-full max-w-md">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 w-5 h-5" />
@@ -292,7 +290,6 @@ function CoursesPage() {
           </div>
 
           <div className="flex gap-8 max-w-7xl mx-auto">
-            {/* Mobile Toggle Button */}
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
               className="lg:hidden fixed bottom-6 right-6 bg-primary text-primary-foreground p-3 rounded-lg shadow-lg z-40"
@@ -301,23 +298,20 @@ function CoursesPage() {
               {sidebarOpen ? <X size={24} /> : <ChevronDown size={24} />}
             </button>
 
-            {/* Sidebar Filter - Responsive */}
             <div className={`${sidebarOpen ? "block" : "hidden"} lg:block w-full lg:w-64 flex-shrink-0 mb-8 lg:mb-0`}>
               <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm sticky top-20 lg:sticky lg:top-4">
-                {/* Filter Header */}
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-lg font-semibold">Filters</h2>
                   {(selectedLanguages.length > 0 ||
                     selectedModes.length > 0 ||
                     priceRange[0] > 0 ||
                     priceRange[1] < 300) && (
-                    <button onClick={clearFilters} className="text-sm text-primary hover:underline">
-                      Clear all
-                    </button>
-                  )}
+                      <button onClick={clearFilters} className="text-sm text-primary hover:underline">
+                        Clear all
+                      </button>
+                    )}
                 </div>
 
-                {/* Languages Filter */}
                 <div className="mb-6">
                   <h3 className="font-semibold text-sm mb-3 text-gray-900">Languages</h3>
                   <div className="space-y-2">
@@ -335,7 +329,6 @@ function CoursesPage() {
                   </div>
                 </div>
 
-                {/* Mode Filter */}
                 <div className="mb-6">
                   <h3 className="font-semibold text-sm mb-3 text-gray-900">Mode</h3>
                   <div className="space-y-2">
@@ -353,7 +346,6 @@ function CoursesPage() {
                   </div>
                 </div>
 
-                {/* Price Slider */}
                 <div className="mb-4">
                   <h3 className="font-semibold text-sm mb-3 text-gray-900">Price Range</h3>
                   <div className="px-2">
@@ -374,7 +366,6 @@ function CoursesPage() {
               </div>
             </div>
 
-            {/* Courses Grid - Keep existing structure */}
             <div className="flex-1 w-full">
               {filteredCourses.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
