@@ -1,10 +1,23 @@
 import * as React from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { ArrowRight, TrendingUp, DollarSign, Handshake } from "lucide-react";
 import heroFreelancer from "../assets/hero-bg.jpg";
 
 function HeroSection() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state && location.state.scrollTo) {
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location.state]);
+
   function scrollToTracks() {
     const tracksSection = document.getElementById('tracks');
     if (tracksSection) {
@@ -33,7 +46,6 @@ function HeroSection() {
         id="hero"
         className="relative min-h-screen flex items-center overflow-hidden"
       >
-        {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <img
             src={heroFreelancer}
@@ -41,12 +53,10 @@ function HeroSection() {
             className="w-full h-full object-cover"
           />
 
-          {/* Gradient Overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-red-600/50" />
           <div className="absolute inset-0 " />
         </div>
 
-        {/* Content on top of background */}
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-3xl">
             <motion.div
@@ -83,10 +93,8 @@ function HeroSection() {
         </div>
       </section>
 
-      {/* BENEFITS SECTION */}
       <section className=" bg-muted/30">
         <div className="">
-
           {/* Marquee before the 3 cards */}
           <div className="mb-6 w-full bg-red-600 text-white py-6 marquee overflow-hidden">
             <div className="marquee__inner flex">
@@ -129,17 +137,10 @@ function HeroSection() {
               </motion.div>
             ))}
           </div>
-
         </div>
       </section>
-
     </>
   );
-
 }
 
-
 export default HeroSection;
-
-
-

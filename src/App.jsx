@@ -8,11 +8,13 @@ import QuestionsPage from "./pages/QuestionsPage.jsx";
 import ProgramDetailsPage from "./pages/ProgramDetailsPage.jsx";
 import AuthPage from "./pages/AuthPage.jsx";
 import CreateProfilePage from "./pages/CreateProfilePage.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
+      <ScrollToTop />
 
       <main className="min-h-screen">
         <Routes>
@@ -20,7 +22,6 @@ function App() {
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/questions" element={<QuestionsPage />} />
           <Route path="/program-details/:id" element={<ProgramDetailsPage />} />
-
           <Route path="/create-profile" element={<CreateProfilePage />} />
 
           {/* Auth page - login and sign up */}

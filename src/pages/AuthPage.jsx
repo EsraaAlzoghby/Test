@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function AuthPage() {
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
+  const location = useLocation();
 
   // Login fields
   const [loginEmail, setLoginEmail] = useState("");
@@ -57,8 +58,7 @@ function AuthPage() {
     };
     localStorage.setItem("userData", JSON.stringify(userData));
 
-    // Navigate to Create Profile page after successful login
-    navigate("/create-profile");
+    navigate("/");
   };
 
   // ---------- SIGN UP ----------
@@ -115,6 +115,26 @@ function AuthPage() {
     setLoginError("");
   };
 
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get("mode") === "signup") {
+      setIsLogin(false);
+    } else {
+      setIsLogin(true);
+    }
+
+    const showLogin = () => setIsLogin(true);
+    const showSignup = () => setIsLogin(false);
+
+    window.addEventListener("showLogin", showLogin);
+    window.addEventListener("showSignup", showSignup);
+
+    return () => {
+      window.removeEventListener("showLogin", showLogin);
+      window.removeEventListener("showSignup", showSignup);
+    };
+  }, [location]);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-300 p-4">
       <div className="w-full max-w-md bg-white rounded-lg shadow-xl p-8">
@@ -125,7 +145,6 @@ function AuthPage() {
           {isLogin ? "Login to continue" : "Sign up to get started"}
         </p>
 
-        {/* LOGIN FORM */}
         {isLogin ? (
           <form onSubmit={handleLoginSubmit} className="space-y-4">
             {loginError && (
@@ -171,7 +190,6 @@ function AuthPage() {
             </button>
           </form>
         ) : (
-          // SIGNUP FORM
           <form onSubmit={handleSignupSubmit} className="space-y-4">
             <div>
               <label className="block mb-1 font-semibold text-red-600 ">Full Name</label>
@@ -240,7 +258,6 @@ function AuthPage() {
           </form>
         )}
 
-        {/* Toggle Form */}
         <div className="text-center mt-6">
           <p className="text-gray-600">
             {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
